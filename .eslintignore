@@ -1,0 +1,8 @@
+/bin
+/build
+/config
+/public
+/scripts
+/node_modules
+webpack.config.js
+/src/serviceWorker.js

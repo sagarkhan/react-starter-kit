@@ -1,0 +1,14 @@
+@import './assets/styles/fonts';
+
+body {
+  margin: 0;
+  @include roboto_regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fcff;  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
