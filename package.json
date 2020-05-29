@@ -1,0 +1,67 @@
+{
+  "name": "cloud-frontend-v1",
+  "version": "1.0.0",
+  "author": "Piri.ai",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/lab": "^4.0.0-alpha.54",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.26.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "redux": "^4.0.5",
+    "redux-pack": "^0.1.5",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "rxjs": "^6.5.5",
+    "validator": "^12.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint --ext .js --ext .jsx --ignore-pattern **/*.test.js src/",
+    "precise-commits": "precise-commits  --whitelist \"**/src/**/*\" --check-only",
+    "husky": "npm run lint && npm run precise-commits",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run husky"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "cross-env": "^5.2.1",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^4.2.5",
+    "node-sass": "^4.14.1",
+    "precise-commits": "^1.0.2",
+    "prettier": "^2.0.5"
+  }
+}
