@@ -27,7 +27,13 @@ Following are the coding standards that one must follow while working on this bo
 
 - Mandatory to follow AirBnB [AirBnB coding standards](https://github.com/airbnb/javascript/blob/master/README.md)
 
+- Mandatory to use [Prettier](https://prettier.io/) VSCode Extension for code formatting.
+
 - JS Linting before every commit `npm run lint`. AirBnB lint configurations are already loaded.
+
+- Precise commits before every commit. `npm run precise-commits`.
+
+- Husky pre-commit hook is configured to validate linting and precise-commits.
 
 - Do not modify linter rules without consulting.
 
@@ -86,6 +92,8 @@ The enitre applcation code and logic should be inside `/src` dir
 
 > /store
 
+> /utils
+
 - All the images, icons, fonts and external assets should be kept inside `/assets` directory.
 - Application level shared component should be written inside `/components` directory.
 - Different enviornment configurations `['dev', 'qa', 'prod']` should be kept inside `/environments` directory in their respective files and env should be loaded from `.env` file. See the example in the boilerplate.
@@ -93,3 +101,9 @@ The enitre applcation code and logic should be inside `/src` dir
 - `/app` directory is where your entire application logic will be written. All the containers,components,routes will be added inside this directory. See the example in the boilerplate.
 - All the API calls in your app should be added `/services` directory. ***Component should never directly make an API call instead it should load the respective service and handle HTTP requests***. 
 - Redux reducers import and store configurations should be added in `/store` directory.
+
+
+## Webpack Configurations Overwrite
+
+- One can overwrite webpack configurations in `webpack.config.js` file located at project root. **Use it at your own risk**
+
