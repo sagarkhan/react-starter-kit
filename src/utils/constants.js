@@ -2,5 +2,5 @@
 
 export const STORAGE_ENGINES = {
   SESSION: 'session',
-  REDUX: 'redux'
+  REDUX: 'redux',
 };

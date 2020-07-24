@@ -22,7 +22,9 @@ export default class StorageService {
         prototypes.forEach((key) => delete StorageService.prototype[key]);
         break;
       default:
-        this.errors.message = `Invalid engine passed in StorageService, valid engines are ${JSON.stringify(this.engines)}`;
+        this.errors.message = `Invalid engine passed in StorageService, valid engines are ${JSON.stringify(
+          this.engines,
+        )}`;
         throw this.errors;
     }
   }

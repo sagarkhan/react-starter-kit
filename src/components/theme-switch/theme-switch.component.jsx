@@ -41,15 +41,14 @@ const mapStateToProps = (state) => ({
   theme: state.settings.theme,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
     {
       action__switchTheme: switchTheme,
       action__showSnackbar: showSnackbar,
     },
     dispatch,
   );
-};
 
 ThemeSwitchComponent.propTypes = {
   theme: PropTypes.string,

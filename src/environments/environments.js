@@ -1,13 +1,13 @@
 const dev = {
-  BASE_URL: ''
+  BASE_URL: '',
 };
 
 const prod = {
-  BASE_URL: ''
+  BASE_URL: '',
 };
 
 const uat = {
-  BASE_URL: ''
+  BASE_URL: '',
 };
 
 const currentEnv = process.env.REACT_APP_STAGE || 'local';
@@ -16,28 +16,28 @@ let activeEnvironment = {};
 switch (currentEnv.toLowerCase()) {
   case 'dev':
     activeEnvironment = {
-      ...dev
+      ...dev,
     };
     break;
   case 'uat':
     activeEnvironment = {
-      ...uat
+      ...uat,
     };
     break;
   case 'prod':
     activeEnvironment = {
-      ...prod
+      ...prod,
     };
     break;
   default:
     activeEnvironment = {
-      ...dev
+      ...dev,
     };
     break;
 }
 
 const environments = {
-  ...activeEnvironment
+  ...activeEnvironment,
 };
 
 export default environments;

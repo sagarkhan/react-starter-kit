@@ -16,7 +16,7 @@ const AppHeader = () => {
   return (
     <AppBar className={`${classes.root}`} position="static">
       <div className={styles.header}>
-        <span>ViewSense</span>
+        <span>React Starter</span>
         <ThemeSwitch />
       </div>
     </AppBar>

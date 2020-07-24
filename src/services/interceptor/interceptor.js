@@ -1,6 +1,9 @@
 /* eslint-disable no-param-reassign */
 import Axios from 'axios';
-import { loader, errorHandler } from '../../store/common/actions/common.actions';
+import {
+  loader,
+  errorHandler,
+} from '../../store/common/actions/common.actions';
 
 /* Loader Show/Hide logic */
 let count = 0;
@@ -42,34 +45,47 @@ const prepareErrorObject = (error) => {
 export default {
   setupInterceptors: (store) => {
     // Requests interceptor
-    Axios.interceptors.request.use((config) => {
-      const { headers } = config;
-      const { silent = true } = headers;
-      if (!silent) showLoader(store);
-      if (headers.silent) {
-        delete headers.silent;
-      }
-      return config;
-    }, (error) => {
-      hideLoader(store);
-      handleError(store, error);
-      return Promise.reject(error ? error['response'] : null);
-    });
+    Axios.interceptors.request.use(
+      (config) => {
+        const { headers } = config;
+        const { silent = true, errorHandling = true } = headers;
+        config.errorHandling = errorHandling;
+        if (!silent) showLoader(store);
+        if (headers.silent) {
+          delete headers.silent;
+        }
+        return config;
+      },
+      (error) => {
+        hideLoader(store);
+        if (error?.config?.errorHandling === false) {
+          return Promise.reject(error);
+        }
+        handleError(store, error);
+        return Promise.reject(error ? error['response'] : null);
+      },
+    );
 
     // Response interceptor
-    Axios.interceptors.response.use((response) => {
-      const { data = {} } = response;
-      hideLoader(store);
-      if (data.status >= 400) {
-        const err = prepareErrorObject(data);
+    Axios.interceptors.response.use(
+      (response) => {
+        const { data = {} } = response;
+        hideLoader(store);
+        if (data.status >= 400) {
+          const err = prepareErrorObject(data);
+          handleError(store, err);
+        }
+        return response;
+      },
+      (error) => {
+        const err = prepareErrorObject(error);
+        hideLoader(store);
+        if (error?.config?.errorHandling === false) {
+          return Promise.reject(error);
+        }
         handleError(store, err);
-      }
-      return response;
-    }, (error) => {
-      const err = prepareErrorObject(error);
-      handleError(store, err);
-      hideLoader(store);
-      return Promise.reject(error ? error['response'] : null);
-    });
-  }
+        return Promise.reject(error ? error['response'] : null);
+      },
+    );
+  },
 };

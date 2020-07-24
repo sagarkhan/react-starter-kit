@@ -21,17 +21,13 @@ class AlertComponent extends PureComponent {
       primaryHandler,
       secondaryHandler,
       primaryActionText,
-      secondaryActionText
+      secondaryActionText,
     } = this.props;
     return (
-      <Dialog
-        open={visible}
-      >
+      <Dialog open={visible}>
         <DialogTitle>{title}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            {message}
-          </DialogContentText>
+          <DialogContentText>{message}</DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={secondaryHandler} color="primary">
@@ -53,7 +49,7 @@ AlertComponent.propTypes = {
   primaryActionText: PropTypes.string,
   secondaryActionText: PropTypes.string,
   primaryHandler: PropTypes.func,
-  secondaryHandler: PropTypes.func
+  secondaryHandler: PropTypes.func,
 };
 
 AlertComponent.defaultProps = {
@@ -63,7 +59,7 @@ AlertComponent.defaultProps = {
   primaryActionText: 'OK',
   secondaryActionText: 'Cancel',
   primaryHandler: Function,
-  secondaryHandler: Function
+  secondaryHandler: Function,
 };
 
 export default AlertComponent;

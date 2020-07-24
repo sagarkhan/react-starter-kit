@@ -1,13 +1,14 @@
 const errorConfigs = {
   401: {
-    message: 'Unauthorized or token expired'
+    message: 'Unauthorized or token expired',
   },
   403: {
-    message: 'You are not authorized to perform this operation'
+    message: 'You are not authorized to perform this operation',
   },
   default: {
-    message: 'There was an error performing this operation. Please try again later.'
-  }
+    message:
+      'There was an error performing this operation. Please try again later.',
+  },
 };
 
 export default errorConfigs;
