@@ -1,11 +1,12 @@
-@import './assets/styles/fonts';
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  @include roboto_regular;
+  @include font_regular;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fcff;
 }
 
 code {

@@ -1,24 +1,24 @@
-@mixin roboto_regular {
-  font-family: 'Roboto', sans-serif;
+@mixin font_regular {
+  font-family: 'font', sans-serif;
   font-weight: 400;
 }
 
-@mixin roboto_medium {
-  font-family: 'Roboto', sans-serif;
+@mixin font_medium {
+  font-family: 'font', sans-serif;
   font-weight: 500;
 }
 
-@mixin roboto_bold {
-  font-family: 'Roboto', sans-serif;
+@mixin font_bold {
+  font-family: 'font', sans-serif;
   font-weight: 700;
 }
 
-@mixin roboto_light {
-  font-family: 'Roboto', sans-serif;
+@mixin font_light {
+  font-family: 'font', sans-serif;
   font-weight: 300;
 }
 
-@mixin roboto_thin {
-  font-family: 'Roboto', sans-serif;
+@mixin font_thin {
+  font-family: 'font', sans-serif;
   font-weight: 100;
 }

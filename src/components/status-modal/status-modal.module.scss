@@ -20,7 +20,7 @@
     &__title {
       font-size: 20px;
       color: $text-primary-color;
-      @include roboto_medium;
+      @include font_medium;
     }
     &__subtitle {
       font-size: 16px;

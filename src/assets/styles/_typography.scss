@@ -1,0 +1,42 @@
+@import './fonts';
+
+@mixin fontSize($size) {
+  @if $size == xxxs {
+    font-size: var(--font-xxxs);
+  } @else if $size == xxs {
+    font-size: var(--font-xxs);
+  } @else if $size == xs {
+    font-size: var(--font-xs);
+  } @else if $size == sm {
+    font-size: var(--font-sm);
+  } @else if $size == md {
+    font-size: var(--font-md);
+  } @else if $size == lg {
+    font-size: var(--font-lg);
+  } @else if $size == xlg {
+    font-size: var(--font-xlg);
+  } @else if $size == xxlg {
+    font-size: var(--font-xxlg);
+  } @else if $size == xxxlg {
+    font-size: var(--font-xxxlg);
+  }
+}
+
+@mixin typography($size, $variant) {
+  @if $variant == bold {
+    @include font_bold;
+    @include fontSize($size);
+  } @else if $variant == semibold {
+    @include font_semi_bold;
+    @include fontSize($size);
+  } @else if $variant == medium {
+    @include font_medium;
+    @include fontSize($size);
+  } @else if $variant == light {
+    @include font_light;
+    @include fontSize($size);
+  } @else {
+    @include font_regular;
+    @include fontSize($size);
+  }
+}

@@ -6,7 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.10.0",
     "@material-ui/lab": "^4.0.0-alpha.54",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.19",
     "moment": "^2.26.0",
@@ -16,7 +16,7 @@
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^4.0.3",
     "redux": "^4.0.5",
     "redux-pack": "^0.1.5",
     "redux-persist": "^5.10.0",
@@ -25,13 +25,13 @@
     "validator": "^12.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "lint": "eslint --ext .js --ext .jsx --ignore-pattern **/*.test.js src/",
     "precise-commits": "precise-commits  --whitelist \"**/src/**/*\" --check-only",
     "husky": "npm run lint && npm run precise-commits",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "husky": {
     "hooks": {
@@ -62,6 +62,8 @@
     "husky": "^4.2.5",
     "node-sass": "^4.14.1",
     "precise-commits": "^1.0.2",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-app-rewired": "^2.1.8",
+    "sass-resources-loader": "^2.1.1"
   }
 }
